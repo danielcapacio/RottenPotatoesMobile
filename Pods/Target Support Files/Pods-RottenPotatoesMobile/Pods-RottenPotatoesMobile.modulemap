@@ -1,0 +1,6 @@
+framework module Pods_RottenPotatoesMobile {
+  umbrella header "Pods-RottenPotatoesMobile-umbrella.h"
+
+  export *
+  module * { export * }
+}
