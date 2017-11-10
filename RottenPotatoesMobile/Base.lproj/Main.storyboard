@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" userLabel="Login" customClass="LoginViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,6 +51,9 @@
                                 <rect key="frame" x="168" y="318" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlK-15-AIj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxs-7l-76G">
                                 <rect key="frame" x="159" y="541" width="57" height="30"/>
@@ -73,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="33" y="43"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Register-->
         <scene sceneID="AH8-ZG-1mr">
             <objects>
-                <viewController id="E46-Zd-ou8" customClass="RegisterViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E46-Zd-ou8" userLabel="Register" customClass="RegisterViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2r-99-clS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,12 +122,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CY-fC-bhc">
-                                <rect key="frame" x="159" y="353" width="57" height="30"/>
+                                <rect key="frame" x="159" y="401" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="register:" destination="E46-Zd-ou8" eventType="touchUpInside" id="iL1-xn-g1R"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ZB-tWP">
                                 <rect key="frame" x="139" y="302" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uhA-B6-Fd2">
+                                <rect key="frame" x="139" y="356" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -135,6 +148,7 @@
                         <viewLayoutGuide key="safeArea" id="1Bu-iw-a0H"/>
                     </view>
                     <connections>
+                        <outlet property="textField_confirmPassword" destination="uhA-B6-Fd2" id="YuP-xH-Q8A"/>
                         <outlet property="textField_email" destination="r1e-4Q-nac" id="DNq-Oe-wso"/>
                         <outlet property="textField_fullName" destination="h07-b2-sx0" id="Wd4-pk-hYt"/>
                         <outlet property="textField_password" destination="ejS-ZB-tWP" id="UCx-Bv-qSU"/>
@@ -144,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="33" y="777"/>
         </scene>
-        <!--Reset Password View Controller-->
+        <!--Reset Password-->
         <scene sceneID="DcE-fN-oBK">
             <objects>
-                <viewController id="57c-Z9-dZs" customClass="ResetPasswordViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="57c-Z9-dZs" userLabel="Reset Password" customClass="ResetPasswordViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JAx-6O-XLn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,6 +200,9 @@
                                 <rect key="frame" x="133" y="270" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset Password"/>
+                                <connections>
+                                    <action selector="submitResetPassword:" destination="57c-Z9-dZs" eventType="touchUpInside" id="4en-1k-c3D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -199,9 +216,41 @@
             </objects>
             <point key="canvasLocation" x="889" y="385"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="aBH-pY-yl2">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="qta-ip-v4u" userLabel="Home" customClass="HomeViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h2D-wH-tJ0" customClass="HomeView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-9a-0jX">
+                                <rect key="frame" x="163" y="558" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="qta-ip-v4u" eventType="touchUpInside" id="MSf-lT-YEk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY6-gV-eqB">
+                                <rect key="frame" x="149" y="227" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0jU-cF-XEp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3a-Ru-DlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="385"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WJW-Sm-Q1S"/>
+        <segue reference="YMO-cv-YE4"/>
         <segue reference="yd5-1e-wte"/>
         <segue reference="NWA-xS-6XF"/>
     </inferredMetricsTieBreakers>
