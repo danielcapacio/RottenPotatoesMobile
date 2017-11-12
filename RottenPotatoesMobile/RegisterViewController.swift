@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var textField_firstName: UITextField!
     @IBOutlet weak var textField_lastName: UITextField!
+    @IBOutlet weak var textField_username: UITextField!
     @IBOutlet weak var textField_email: UITextField!
     @IBOutlet weak var textField_password: UITextField!
     @IBOutlet weak var textField_confirmPassword: UITextField!
@@ -45,6 +46,13 @@ class RegisterViewController: UIViewController {
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+        } else if textField_username.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your username", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
         } else if textField_email.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email", preferredStyle: .alert)
             
@@ -63,7 +71,6 @@ class RegisterViewController: UIViewController {
             Auth.auth().createUser(withEmail: textField_email.text!, password: textField_password.text!) { (user, error) in
                 if error == nil {
                     print("You have successfully signed up")
-                    //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                     self.present(vc!, animated: true, completion: nil)
