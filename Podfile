@@ -9,5 +9,6 @@ target 'RottenPotatoesMobile' do
   pod 'SwiftFormat/CLI'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-
+  pod 'Firebase/Database'
+  
 end

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var textField_email: UITextField!
     @IBOutlet weak var textField_password: UITextField!
     @IBOutlet weak var textField_confirmPassword: UITextField!
+    
+    var ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,56 +36,85 @@ class RegisterViewController: UIViewController {
     
     @IBAction func register(_ sender: Any) {
         if textField_firstName.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your first name", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter your first name.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
         } else if textField_lastName.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your last name", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter your last name.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
         } else if textField_username.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your username", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter your username.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
         } else if textField_email.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter your email.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
         } else if textField_password.text != textField_confirmPassword.text {
-            let alertController = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Passwords do not match.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
         } else {
-            Auth.auth().createUser(withEmail: textField_email.text!, password: textField_password.text!) { (user, error) in
-                if error == nil {
-                    print("You have successfully signed up")
-                    
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    self.present(vc!, animated: true, completion: nil)
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+            // check if username already exists in the db
+            ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                if snapshot.hasChild(((self.textField_username.text! as NSString) as String)) {
+                    let alertController = UIAlertController(title: "Error", message: "The username is already in use by another account.", preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
+                } else {
+                    Auth.auth().createUser(withEmail: self.textField_email.text!, password: self.textField_password.text!) { (user, error) in
+                        if error == nil {
+                            print("You have successfully signed up")
+                            let write = [
+                                self.textField_username.text! as NSString :
+                                    [
+                                        "firstName" : self.textField_firstName.text! as NSString,
+                                        "lastName" : self.textField_lastName.text! as NSString,
+                                        "email" : self.textField_email.text! as NSString,
+                                        "reviews" :
+                                            [
+                                                "movie" :
+                                                    [
+                                                        "rating" : nil,
+                                                        "review" : nil
+                                                    ]
+                                            ]
+                                    ]
+                            ]
+                            self.ref.child("users").updateChildValues(write)
+                            
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                            self.present(vc!, animated: true, completion: nil)
+                        } else {
+                            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                            
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(defaultAction)
+                            
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
                 }
-            }
+            })
         }
     }
 
