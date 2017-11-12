@@ -12,7 +12,8 @@ import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var textField_fullName: UITextField!
+    @IBOutlet weak var textField_firstName: UITextField!
+    @IBOutlet weak var textField_lastName: UITextField!
     @IBOutlet weak var textField_email: UITextField!
     @IBOutlet weak var textField_password: UITextField!
     @IBOutlet weak var textField_confirmPassword: UITextField!
@@ -30,9 +31,16 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func register(_ sender: Any) {
-        if textField_fullName.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your full name", preferredStyle: .alert)
-    
+        if textField_firstName.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your first name", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+        } else if textField_lastName.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your last name", preferredStyle: .alert)
+            
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
