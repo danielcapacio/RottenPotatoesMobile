@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField_firstName: UITextField!
     @IBOutlet weak var textField_lastName: UITextField!
@@ -25,8 +25,12 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        textField_password.isSecureTextEntry = true
-        textField_confirmPassword.isSecureTextEntry = true
+        self.textField_firstName.delegate = self
+        self.textField_lastName.delegate = self
+        self.textField_username.delegate = self
+        self.textField_email.delegate = self
+        self.textField_password.delegate = self
+        self.textField_confirmPassword.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +120,35 @@ class RegisterViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    // hide keyboard when user touches outside keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // navigate to next field when pressing return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case textField_firstName:
+                textField_lastName.becomeFirstResponder()
+                break
+            case textField_lastName:
+                textField_username.becomeFirstResponder()
+                break
+            case textField_username:
+                textField_email.becomeFirstResponder()
+                break
+            case textField_email:
+                textField_password.becomeFirstResponder()
+                break
+            case textField_password:
+                textField_confirmPassword.becomeFirstResponder()
+                break
+            default:
+                textField.resignFirstResponder()
+            }
+        return true
     }
 
     /*

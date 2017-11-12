@@ -10,14 +10,14 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField_email: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.textField_email.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +55,17 @@ class ResetPasswordViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             })
         }
-    }    
+    }
+    
+    // hide keyboard when user touches outside keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation
