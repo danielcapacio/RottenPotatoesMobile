@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0631B2D91FBC371A00BCAD3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* APIManager.swift */; };
 		0670F8051FB554060067317B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8041FB554060067317B /* AppDelegate.swift */; };
 		0670F8071FB554060067317B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8061FB554060067317B /* LoginViewController.swift */; };
 		0670F80A1FB554060067317B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0670F8081FB554060067317B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0631B2D81FBC371A00BCAD3F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0670F8011FB554060067317B /* RottenPotatoesMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenPotatoesMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0670F8041FB554060067317B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0670F8061FB554060067317B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				0670F81A1FB5587E0067317B /* ResetPasswordViewController.swift */,
 				0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */,
 				0670F81E1FB5F7830067317B /* HomeViewController.swift */,
+				0631B2D81FBC371A00BCAD3F /* APIManager.swift */,
 			);
 			path = RottenPotatoesMobile;
 			sourceTree = "<group>";
@@ -179,15 +182,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -236,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0631B2D91FBC371A00BCAD3F /* APIManager.swift in Sources */,
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
 				0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */,

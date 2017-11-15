@@ -10,5 +10,7 @@ target 'RottenPotatoesMobile' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
   
 end
