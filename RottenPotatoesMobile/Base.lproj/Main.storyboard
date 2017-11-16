@@ -287,11 +287,24 @@
         <!--Profile Tab-->
         <scene sceneID="nXz-O7-TMT">
             <objects>
-                <viewController id="vJ6-50-sZ4" userLabel="Profile Tab" sceneMemberID="viewController">
+                <viewController id="vJ6-50-sZ4" userLabel="Profile Tab" customClass="ProfileViewController" customModule="RottenPotatoesMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sv9-0o-a0S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-WQ-iMd">
+                                <rect key="frame" x="163" y="437" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="vJ6-50-sZ4" eventType="touchUpInside" id="APz-fp-IEI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="urM-jM-Tll" firstAttribute="bottom" secondItem="yz2-WQ-iMd" secondAttribute="bottom" constant="151" id="g3i-Ss-5eq"/>
+                            <constraint firstItem="yz2-WQ-iMd" firstAttribute="centerX" secondItem="Sv9-0o-a0S" secondAttribute="centerX" id="hzA-xj-mKI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="urM-jM-Tll"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="s02-G2-qMk"/>
@@ -325,34 +338,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Rotten Potatoes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqZ-SU-41W">
-                                <rect key="frame" x="78.5" y="239" width="218" height="21"/>
+                                <rect key="frame" x="78" y="158" width="218" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJw-5Z-c1w">
-                                <rect key="frame" x="163" y="451" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logout:" destination="8rP-rT-1ml" eventType="touchUpInside" id="5eq-N3-j7r"/>
-                                    <action selector="logout:" destination="EkB-Td-MiL" eventType="touchUpInside" id="N5p-h3-TjJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cqZ-SU-41W" firstAttribute="leading" secondItem="wzG-ln-ilB" secondAttribute="leading" constant="78.5" id="2tZ-Ae-xmz"/>
-                            <constraint firstItem="wzG-ln-ilB" firstAttribute="trailing" secondItem="cqZ-SU-41W" secondAttribute="trailing" constant="78.5" id="9Py-7O-A7A"/>
-                            <constraint firstItem="QJw-5Z-c1w" firstAttribute="centerX" secondItem="4KN-dF-Obg" secondAttribute="centerX" id="K17-l2-tqT"/>
-                            <constraint firstItem="cqZ-SU-41W" firstAttribute="top" secondItem="wzG-ln-ilB" secondAttribute="top" constant="219" id="Y8X-KF-bcV"/>
-                            <constraint firstItem="wzG-ln-ilB" firstAttribute="bottom" secondItem="QJw-5Z-c1w" secondAttribute="bottom" constant="137" id="s6G-Av-c6x"/>
+                            <constraint firstItem="cqZ-SU-41W" firstAttribute="centerX" secondItem="4KN-dF-Obg" secondAttribute="centerX" id="1Xd-Bb-apv"/>
+                            <constraint firstItem="cqZ-SU-41W" firstAttribute="top" secondItem="wzG-ln-ilB" secondAttribute="top" constant="138" id="UuZ-cx-Rl9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wzG-ln-ilB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="DJf-0K-ib6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOD-tB-Vq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="EkB-Td-MiL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2743" y="-559"/>
         </scene>
