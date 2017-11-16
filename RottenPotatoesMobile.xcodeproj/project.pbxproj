@@ -17,6 +17,10 @@
 		0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F81A1FB5587E0067317B /* ResetPasswordViewController.swift */; };
 		0670F81D1FB55C5A0067317B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */; };
 		0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F81E1FB5F7830067317B /* HomeViewController.swift */; };
+		068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */; };
+		068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */; };
+		068B7F921FBD853F00B40B3C /* HomeCategoryMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B7F901FBD853F00B40B3C /* HomeCategoryMoviesViewController.swift */; };
+		068B7F931FBD853F00B40B3C /* HomeCategoryMoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068B7F911FBD853F00B40B3C /* HomeCategoryMoviesViewController.xib */; };
 		069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069536111FBC657900B0DA75 /* ProfileViewController.swift */; };
 		A7460A5D93B1CF2436AC1CD3 /* Pods_RottenPotatoesMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,10 @@
 		0670F81A1FB5587E0067317B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0670F81E1FB5F7830067317B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		068B7F901FBD853F00B40B3C /* HomeCategoryMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryMoviesViewController.swift; sourceTree = "<group>"; };
+		068B7F911FBD853F00B40B3C /* HomeCategoryMoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryMoviesViewController.xib; sourceTree = "<group>"; };
 		069536111FBC657900B0DA75 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RottenPotatoesMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0DC6165B9E14621AD8C55 /* Pods-RottenPotatoesMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenPotatoesMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +81,8 @@
 		0670F8031FB554060067317B /* RottenPotatoesMobile */ = {
 			isa = PBXGroup;
 			children = (
+				068B7F8F1FBD851B00B40B3C /* Home */,
+				068B7F881FBD6C5000B40B3C /* Cell */,
 				0670F8041FB554060067317B /* AppDelegate.swift */,
 				0670F8061FB554060067317B /* LoginViewController.swift */,
 				0670F8081FB554060067317B /* Main.storyboard */,
@@ -87,6 +97,24 @@
 				069536111FBC657900B0DA75 /* ProfileViewController.swift */,
 			);
 			path = RottenPotatoesMobile;
+			sourceTree = "<group>";
+		};
+		068B7F881FBD6C5000B40B3C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */,
+				068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		068B7F8F1FBD851B00B40B3C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				068B7F901FBD853F00B40B3C /* HomeCategoryMoviesViewController.swift */,
+				068B7F911FBD853F00B40B3C /* HomeCategoryMoviesViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		0D23ACE0ED676870D2D1433B /* Frameworks */ = {
@@ -171,6 +199,8 @@
 				0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */,
 				0670F81D1FB55C5A0067317B /* GoogleService-Info.plist in Resources */,
 				0670F80C1FB554060067317B /* Assets.xcassets in Resources */,
+				068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */,
+				068B7F931FBD853F00B40B3C /* HomeCategoryMoviesViewController.xib in Resources */,
 				0670F80A1FB554060067317B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +278,12 @@
 			files = (
 				0631B2D91FBC371A00BCAD3F /* APIManager.swift in Sources */,
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
+				068B7F921FBD853F00B40B3C /* HomeCategoryMoviesViewController.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
 				0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */,
 				069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */,
 				0670F8071FB554060067317B /* LoginViewController.swift in Sources */,
+				068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */,
 				0670F8051FB554060067317B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

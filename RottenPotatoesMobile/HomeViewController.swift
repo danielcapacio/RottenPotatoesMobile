@@ -7,31 +7,61 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let titleData = ["Popular",
+                    "Now Playing",
+                    "Top Rated",
+                    "Upcoming"]
+    
+    let subTitleData = ["List of the current popular movies.",
+                        "List of movies in theatres.",
+                        "Top rated movies on TMDb.",
+                        "List of upcoming movies in theatres."]
+    
+    let imageData = ["video-camera",
+                     "tickets",
+                     "frame",
+                     "director-chair"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Rotten Potatoes"
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let nibName = UINib(nibName: "HomeTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "homeTableViewCell")
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titleData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! HomeTableViewCell
+        cell.commonInit(imageData[indexPath.item], title: titleData[indexPath.item], sub: subTitleData[indexPath.item])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = HomeCategoryMoviesViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func logout(_ sender: Any) {
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
-                present(vc, animated: true, completion: nil)
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }
     }
     
     /*
