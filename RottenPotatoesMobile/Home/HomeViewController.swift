@@ -27,6 +27,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                      "frame",
                      "director-chair"]
     
+    let categoryData = [PopularViewController(),
+                        NowPlayingViewController(),
+                        TopRatedViewController(),
+                        UpcomingViewController()]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = HomeCategoryMoviesViewController()
+        let vc = categoryData[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -1,5 +1,5 @@
 //
-//  HomeCategoryMoviesViewController.swift
+//  TopRatedViewController.swift
 //  RottenPotatoesMobile
 //
 //  Created by Daniel Capacio on 2017-11-16.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class HomeCategoryMoviesViewController: UIViewController {
+class TopRatedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Top Rated"
     }
 
     override func didReceiveMemoryWarning() {
