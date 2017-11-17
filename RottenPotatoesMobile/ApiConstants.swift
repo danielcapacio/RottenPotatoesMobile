@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  ApiConstants.swift
 //  RottenPotatoesMobile
 //
 //  Created by Daniel Capacio on 2017-11-15.
@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct APIManager {
+struct ApiConstants {
     
     static let API_KEY = "" // not committing my api key
+    static let MAX_TOTAL_PAGES = 2
+    static let MAX_TABLE_ROWS = 20 * MAX_TOTAL_PAGES
     
     static let baseUrl = "https://api.themoviedb.org/3"
     static let baseUrlPoster = "https://image.tmdb.org/t/p/"

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0631B2D91FBC371A00BCAD3F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* APIManager.swift */; };
+		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
+		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
+		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
 		0670F8051FB554060067317B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8041FB554060067317B /* AppDelegate.swift */; };
 		0670F8071FB554060067317B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8061FB554060067317B /* LoginViewController.swift */; };
 		0670F80A1FB554060067317B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0670F8081FB554060067317B /* Main.storyboard */; };
@@ -32,7 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0631B2D81FBC371A00BCAD3F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
 		0670F8011FB554060067317B /* RottenPotatoesMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenPotatoesMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0670F8041FB554060067317B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0670F8061FB554060067317B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,25 +106,27 @@
 				0670F80D1FB554060067317B /* LaunchScreen.storyboard */,
 				0670F8101FB554060067317B /* Info.plist */,
 				0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */,
-				0631B2D81FBC371A00BCAD3F /* APIManager.swift */,
+				0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */,
 			);
 			path = RottenPotatoesMobile;
 			sourceTree = "<group>";
 		};
-		068B7F881FBD6C5000B40B3C /* Cell */ = {
+		068B7F881FBD6C5000B40B3C /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
 				068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */,
 				068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */,
+				06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */,
+				06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */,
 			);
-			path = Cell;
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		068B7F8F1FBD851B00B40B3C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				0670F81E1FB5F7830067317B /* HomeViewController.swift */,
-				068B7F881FBD6C5000B40B3C /* Cell */,
+				068B7F881FBD6C5000B40B3C /* TableCells */,
 				068B7F971FBD920E00B40B3C /* PopularViewController.swift */,
 				068B7F981FBD920E00B40B3C /* PopularViewController.xib */,
 				068B7F9C1FBD922600B40B3C /* NowPlayingViewController.swift */,
@@ -239,6 +245,7 @@
 				068B7FA31FBD923600B40B3C /* TopRatedViewController.xib in Resources */,
 				068B7F9A1FBD920E00B40B3C /* PopularViewController.xib in Resources */,
 				0670F80A1FB554060067317B /* Main.storyboard in Resources */,
+				06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -262,6 +270,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -314,10 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				068B7FA61FBD925200B40B3C /* UpcomingViewController.swift in Sources */,
-				0631B2D91FBC371A00BCAD3F /* APIManager.swift in Sources */,
+				0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */,
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
 				068B7F991FBD920E00B40B3C /* PopularViewController.swift in Sources */,
+				06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */,
 				068B7FA21FBD923600B40B3C /* TopRatedViewController.swift in Sources */,
 				0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */,
 				069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */,

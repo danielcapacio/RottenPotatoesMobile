@@ -35,13 +35,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "Rotten Potatoes"
+        self.navigationItem.title = "Welcome"
         
         tableView.dataSource = self
         tableView.delegate = self
         
         let nibName = UINib(nibName: "HomeTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "homeTableViewCell")
+        
+        tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,11 +73,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let vc = categoryData[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     /*

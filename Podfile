@@ -11,6 +11,7 @@ target 'RottenPotatoesMobile' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   
 end
