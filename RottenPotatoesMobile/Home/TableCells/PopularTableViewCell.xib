@@ -74,7 +74,7 @@
                 <outlet property="label_popularTitle" destination="S9Q-2J-xsn" id="6t8-kv-zDU"/>
                 <outlet property="label_popularYear" destination="Uxa-e3-gg1" id="3zz-9d-LeA"/>
             </connections>
-            <point key="canvasLocation" x="34" y="53.5"/>
+            <point key="canvasLocation" x="131" y="59"/>
         </tableViewCell>
     </objects>
 </document>

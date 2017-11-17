@@ -32,7 +32,6 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let url = "\(ApiConstants.baseUrl)\(ApiConstants.discover)?api_key=\(ApiConstants.API_KEY)&sort_by=popularity.desc"
         self.loadPopularMovies(url: url)
-        
         tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
     }
 
@@ -113,6 +112,20 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MovieInfoViewController()
+        
+        let movie = popularMovies[indexPath.row]
+        vc.selectedMovie = movie
+        
+        let posterId = movie["id"].stringValue + "_" + ApiConstants.posterSize.medium.rawValue
+        let posterImage = imgCache[posterId]
+        vc.selectedMoviePoster = posterImage
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     /**
