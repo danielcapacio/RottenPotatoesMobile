@@ -12,10 +12,13 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var image_profileIcon: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.image_profileIcon.image = #imageLiteral(resourceName: "frog")
     }
 
     override func didReceiveMemoryWarning() {

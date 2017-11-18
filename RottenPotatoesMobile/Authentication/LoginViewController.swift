@@ -14,12 +14,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField_email: UITextField!
     @IBOutlet weak var textField_password: UITextField!
+    @IBOutlet weak var image_background: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.textField_email.delegate = self
         self.textField_password.delegate = self
+        
+        self.image_background.image = #imageLiteral(resourceName: "background")
     }
 
     override func didReceiveMemoryWarning() {

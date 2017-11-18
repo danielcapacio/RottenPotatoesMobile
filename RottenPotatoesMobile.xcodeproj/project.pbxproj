@@ -19,7 +19,6 @@
 		0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0670F80D1FB554060067317B /* LaunchScreen.storyboard */; };
 		0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8181FB5586A0067317B /* RegisterViewController.swift */; };
 		0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F81A1FB5587E0067317B /* ResetPasswordViewController.swift */; };
-		0670F81D1FB55C5A0067317B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */; };
 		0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F81E1FB5F7830067317B /* HomeViewController.swift */; };
 		068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */; };
 		068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */; };
@@ -32,6 +31,7 @@
 		068B7FA61FBD925200B40B3C /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B7FA41FBD925200B40B3C /* UpcomingViewController.swift */; };
 		068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068B7FA51FBD925200B40B3C /* UpcomingViewController.xib */; };
 		069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069536111FBC657900B0DA75 /* ProfileViewController.swift */; };
+		06B7893E1FBF64B40086BF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */; };
 		A7460A5D93B1CF2436AC1CD3 /* Pods_RottenPotatoesMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		0670F8101FB554060067317B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0670F8181FB5586A0067317B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0670F81A1FB5587E0067317B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0670F81E1FB5F7830067317B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		068B7FA41FBD925200B40B3C /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		068B7FA51FBD925200B40B3C /* UpcomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingViewController.xib; sourceTree = "<group>"; };
 		069536111FBC657900B0DA75 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RottenPotatoesMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0DC6165B9E14621AD8C55 /* Pods-RottenPotatoesMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenPotatoesMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile.release.xcconfig"; sourceTree = "<group>"; };
 		FB4DEE37858895E50A65ABCC /* Pods-RottenPotatoesMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenPotatoesMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 		0670F8031FB554060067317B /* RottenPotatoesMobile */ = {
 			isa = PBXGroup;
 			children = (
+				06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */,
 				068B7F961FBD915700B40B3C /* Profile */,
 				068B7F941FBD906300B40B3C /* Authentication */,
 				068B7F8F1FBD851B00B40B3C /* Home */,
@@ -118,7 +119,6 @@
 				0670F80B1FB554060067317B /* Assets.xcassets */,
 				0670F80D1FB554060067317B /* LaunchScreen.storyboard */,
 				0670F8101FB554060067317B /* Info.plist */,
-				0670F81C1FB55C5A0067317B /* GoogleService-Info.plist */,
 				0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */,
 			);
 			path = RottenPotatoesMobile;
@@ -252,13 +252,13 @@
 			files = (
 				0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */,
 				06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */,
-				0670F81D1FB55C5A0067317B /* GoogleService-Info.plist in Resources */,
 				0670F80C1FB554060067317B /* Assets.xcassets in Resources */,
 				068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */,
 				068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */,
 				068B7F9F1FBD922600B40B3C /* NowPlayingViewController.xib in Resources */,
 				068B7FA31FBD923600B40B3C /* TopRatedViewController.xib in Resources */,
 				068B7F9A1FBD920E00B40B3C /* PopularViewController.xib in Resources */,
+				06B7893E1FBF64B40086BF4B /* GoogleService-Info.plist in Resources */,
 				0670F80A1FB554060067317B /* Main.storyboard in Resources */,
 				06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */,
 			);
@@ -489,10 +489,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RX2V366UG6;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = RottenPotatoesMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dan.RottenPotatoesMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.comp4977;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,10 +506,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RX2V366UG6;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = RottenPotatoesMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dan.RottenPotatoesMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.comp4977;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
