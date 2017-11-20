@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import KRProgressHUD
 
 class MovieInfoViewController: UIViewController {
     
@@ -31,22 +32,30 @@ class MovieInfoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.uiView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        self.uiView.isHidden = true
+        KRProgressHUD.show()
         
-        if let poster = selectedMoviePoster {
-            let img = self.image_poster
-            img?.image = poster
-            img?.layer.shadowColor = UIColor.black.cgColor
-            img?.layer.shadowOpacity = 1
-            img?.layer.shadowOffset = CGSize.zero
-            img?.layer.shadowRadius = 10
-            img?.layer.shadowPath = UIBezierPath(roundedRect:  self.image_poster.bounds, cornerRadius: 10).cgPath
-        }
-        
-        if let movie = self.selectedMovie {
-            let movieId = movie["id"].stringValue
-            let url = "\(ApiConstants.baseUrl)/movie/\(movieId)?api_key=\(ApiConstants.API_KEY)&language=en-US"
-            self.setPrimaryMovieInfo(url: url)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            KRProgressHUD.dismiss()
+            self.uiView.isHidden = false
+            
+            self.uiView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+            
+            if let poster = self.selectedMoviePoster {
+                let img = self.image_poster
+                img?.image = poster
+                img?.layer.shadowColor = UIColor.black.cgColor
+                img?.layer.shadowOpacity = 1
+                img?.layer.shadowOffset = CGSize.zero
+                img?.layer.shadowRadius = 10
+                img?.layer.shadowPath = UIBezierPath(roundedRect:  self.image_poster.bounds, cornerRadius: 10).cgPath
+            }
+            
+            if let movie = self.selectedMovie {
+                let movieId = movie["id"].stringValue
+                let url = "\(ApiConstants.baseUrl)/movie/\(movieId)?api_key=\(ApiConstants.API_KEY)&language=en-US"
+                self.setPrimaryMovieInfo(url: url)
+            }
         }
     }
 

@@ -13,5 +13,6 @@ target 'RottenPotatoesMobile' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
+  pod 'KRProgressHUD'
   
 end

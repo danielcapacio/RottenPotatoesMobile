@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import KRProgressHUD
 
 class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,15 +25,21 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Popular"
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        KRProgressHUD.show(withMessage: "Loading movies...")
         
-        let nibName = UINib(nibName: "PopularTableViewCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "popularTableViewCell")
-        
-        let url = "\(ApiConstants.baseUrl)\(ApiConstants.discover)?api_key=\(ApiConstants.API_KEY)&sort_by=popularity.desc"
-        self.loadPopularMovies(url: url)
-        tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            KRProgressHUD.dismiss()
+            
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
+            
+            let nibName = UINib(nibName: "PopularTableViewCell", bundle: nil)
+            self.tableView.register(nibName, forCellReuseIdentifier: "popularTableViewCell")
+            
+            let url = "\(ApiConstants.baseUrl)\(ApiConstants.discover)?api_key=\(ApiConstants.API_KEY)&sort_by=popularity.desc"
+            self.loadPopularMovies(url: url)
+            self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
