@@ -76,7 +76,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let posterImage = imgCache[posterId] {
                 cell.image_popularPoster.image = posterImage
             } else {
-                let url = ApiConstants.baseUrlPoster + ApiConstants.posterSize.medium.rawValue + imagePath
+                let url = ApiConstants.baseUrlImage + ApiConstants.posterSize.medium.rawValue + imagePath
                 Alamofire.request(url).responseImage { response in
                     switch response.result {
                     case .success(let value):

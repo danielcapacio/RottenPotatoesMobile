@@ -15,7 +15,7 @@ struct ApiConstants {
     static let MAX_TABLE_ROWS = 20 * MAX_TOTAL_PAGES
     
     static let baseUrl = "https://api.themoviedb.org/3"
-    static let baseUrlPoster = "https://image.tmdb.org/t/p/"
+    static let baseUrlImage = "https://image.tmdb.org/t/p/"
     
     static let discover = "/discover/movie"
     static let genres = "/genre/movie/list"
