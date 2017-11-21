@@ -21,6 +21,7 @@
                 <outlet property="label_revenue" destination="5EX-d8-W41" id="6Tg-SO-LqB"/>
                 <outlet property="label_tagline" destination="os2-c0-Yh3" id="qIv-4O-azs"/>
                 <outlet property="label_title" destination="Jdn-Vi-iYf" id="5q0-9s-mkX"/>
+                <outlet property="outerView" destination="i5M-Pr-FkT" id="FID-FZ-hxn"/>
                 <outlet property="uiView" destination="Xco-0p-Jmf" id="qA9-aL-bL4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -81,7 +82,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <size key="shadowOffset" width="2" height="1"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-yT-7xv">
                                     <rect key="frame" x="38" y="293" width="300" height="21"/>
@@ -104,6 +105,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGw-Fe-oPW">
                                     <rect key="frame" x="141" y="212" width="93" height="30"/>
                                     <state key="normal" title="Add a review!"/>
+                                    <connections>
+                                        <action selector="goToReviewPage:" destination="-1" eventType="touchUpInside" id="Ugv-pg-bpg"/>
+                                    </connections>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-Wp-7Sw">
                                     <rect key="frame" x="122" y="18" width="130" height="180"/>

@@ -13,6 +13,7 @@ import KRProgressHUD
 
 class MovieInfoViewController: UIViewController {
     
+    @IBOutlet var outerView: UIView!
     @IBOutlet weak var uiView: UIView!
     
     @IBOutlet weak var image_poster: UIImageView!
@@ -27,15 +28,18 @@ class MovieInfoViewController: UIViewController {
     
     var selectedMovie: JSON?
     var selectedMoviePoster: UIImage?
+    var selectedMovieTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Movie Info"
+        self.outerView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         self.uiView.isHidden = true
         KRProgressHUD.show()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             KRProgressHUD.dismiss()
             self.uiView.isHidden = false
             
@@ -72,6 +76,7 @@ class MovieInfoViewController: UIViewController {
                     for (key,subJson):(String, JSON) in json {
                         if key == "title" {
                             self.label_title.text = subJson.stringValue
+                            self.selectedMovieTitle = subJson.stringValue
                         } else if key == "release_date" {
                             self.label_releaseDate.text = "Release Date: \(subJson.stringValue)"
                         } else if key == "genres" {
@@ -117,7 +122,14 @@ class MovieInfoViewController: UIViewController {
         }
     }
     
-
+    @IBAction func goToReviewPage(_ sender: Any) {
+        let vc = ReviewViewController()
+        vc.movie = self.selectedMovie
+        vc.poster = self.selectedMoviePoster
+        vc.movieTitle = self.selectedMovieTitle
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

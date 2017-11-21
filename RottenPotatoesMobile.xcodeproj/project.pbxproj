@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061D81301FC2E09800C342B0 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D812E1FC2E09800C342B0 /* ReviewViewController.swift */; };
+		061D81311FC2E09800C342B0 /* ReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* ReviewViewController.xib */; };
 		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
 		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061D812E1FC2E09800C342B0 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		061D812F1FC2E09800C342B0 /* ReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewViewController.xib; sourceTree = "<group>"; };
 		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061D812D1FC2E08800C342B0 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				061D812E1FC2E09800C342B0 /* ReviewViewController.swift */,
+				061D812F1FC2E09800C342B0 /* ReviewViewController.xib */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		06701DE21FBF04E4000A4252 /* MovieInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +152,16 @@
 			isa = PBXGroup;
 			children = (
 				06701DE21FBF04E4000A4252 /* MovieInfo */,
-				0670F81E1FB5F7830067317B /* HomeViewController.swift */,
+				061D812D1FC2E08800C342B0 /* Review */,
 				068B7F881FBD6C5000B40B3C /* TableCells */,
-				068B7F971FBD920E00B40B3C /* PopularViewController.swift */,
-				068B7F981FBD920E00B40B3C /* PopularViewController.xib */,
+				0670F81E1FB5F7830067317B /* HomeViewController.swift */,
 				068B7F9C1FBD922600B40B3C /* NowPlayingViewController.swift */,
-				068B7F9D1FBD922600B40B3C /* NowPlayingViewController.xib */,
+				068B7F971FBD920E00B40B3C /* PopularViewController.swift */,
 				068B7FA01FBD923600B40B3C /* TopRatedViewController.swift */,
-				068B7FA11FBD923600B40B3C /* TopRatedViewController.xib */,
 				068B7FA41FBD925200B40B3C /* UpcomingViewController.swift */,
+				068B7F9D1FBD922600B40B3C /* NowPlayingViewController.xib */,
+				068B7F981FBD920E00B40B3C /* PopularViewController.xib */,
+				068B7FA11FBD923600B40B3C /* TopRatedViewController.xib */,
 				068B7FA51FBD925200B40B3C /* UpcomingViewController.xib */,
 			);
 			path = Home;
@@ -252,6 +266,7 @@
 			files = (
 				0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */,
 				06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */,
+				061D81311FC2E09800C342B0 /* ReviewViewController.xib in Resources */,
 				0670F80C1FB554060067317B /* Assets.xcassets in Resources */,
 				068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */,
 				068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */,
@@ -343,6 +358,7 @@
 			files = (
 				068B7FA61FBD925200B40B3C /* UpcomingViewController.swift in Sources */,
 				0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */,
+				061D81301FC2E09800C342B0 /* ReviewViewController.swift in Sources */,
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
 				068B7F991FBD920E00B40B3C /* PopularViewController.swift in Sources */,
