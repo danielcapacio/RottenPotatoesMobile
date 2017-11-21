@@ -16,7 +16,7 @@ class MovieInfoViewController: UIViewController {
     @IBOutlet var outerView: UIView!
     @IBOutlet weak var uiView: UIView!
     
-    @IBOutlet weak var image_poster: UIImageView!
+    @IBOutlet weak var image_backdrop: UIImageView!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var label_releaseDate: UILabel!
     @IBOutlet weak var label_genres: UILabel!
@@ -27,7 +27,7 @@ class MovieInfoViewController: UIViewController {
     @IBOutlet weak var label_overview: UILabel!
     
     var selectedMovie: JSON?
-    var selectedMoviePoster: UIImage?
+    var selectedMovieBackdrop: UIImage?
     var selectedMovieTitle: String?
     
     override func viewDidLoad() {
@@ -38,23 +38,11 @@ class MovieInfoViewController: UIViewController {
         self.outerView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         self.uiView.isHidden = true
         KRProgressHUD.show()
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             KRProgressHUD.dismiss()
             self.uiView.isHidden = false
-            
             self.uiView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
-            
-            if let poster = self.selectedMoviePoster {
-                let img = self.image_poster
-                img?.image = poster
-                img?.layer.shadowColor = UIColor.black.cgColor
-                img?.layer.shadowOpacity = 1
-                img?.layer.shadowOffset = CGSize.zero
-                img?.layer.shadowRadius = 10
-                img?.layer.shadowPath = UIBezierPath(roundedRect:  self.image_poster.bounds, cornerRadius: 10).cgPath
-            }
-            
+            self.image_backdrop.image = self.selectedMovieBackdrop
             if let movie = self.selectedMovie {
                 let movieId = movie["id"].stringValue
                 let url = "\(ApiConstants.baseUrl)/movie/\(movieId)?api_key=\(ApiConstants.API_KEY)&language=en-US"
@@ -125,7 +113,7 @@ class MovieInfoViewController: UIViewController {
     @IBAction func goToReviewPage(_ sender: Any) {
         let vc = ReviewViewController()
         vc.movie = self.selectedMovie
-        vc.poster = self.selectedMoviePoster
+        vc.backdrop = self.selectedMovieBackdrop
         vc.movieTitle = self.selectedMovieTitle
         self.navigationController?.pushViewController(vc, animated: true)
     }

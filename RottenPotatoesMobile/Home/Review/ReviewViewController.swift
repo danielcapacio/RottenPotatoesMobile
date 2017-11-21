@@ -15,14 +15,14 @@ class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDa
     @IBOutlet var outerView: UIView!
     @IBOutlet weak var uiView: UIView!
     
-    @IBOutlet weak var image_poster: UIImageView!
+    @IBOutlet weak var image_backdrop: UIImageView!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var textView_comment: UITextView!
     @IBOutlet weak var pickerView_rating: UIPickerView!
     @IBOutlet weak var button_save: UIButton!
     
     var movie: JSON?
-    var poster: UIImage?
+    var backdrop: UIImage?
     var movieTitle: String?
     
     let ratings = ["1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5",
@@ -38,16 +38,8 @@ class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDa
         self.outerView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         self.uiView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         
-        if let poster = self.poster {
-            let img = self.image_poster
-            img?.image = poster
-            img?.layer.shadowColor = UIColor.black.cgColor
-            img?.layer.shadowOpacity = 1
-            img?.layer.shadowOffset = CGSize.zero
-            img?.layer.shadowRadius = 10
-            img?.layer.shadowPath = UIBezierPath(roundedRect:  self.image_poster.bounds, cornerRadius: 10).cgPath
-        }
-        self.label_title.text = movieTitle
+        self.image_backdrop.image = self.backdrop
+        self.label_title.text = self.movieTitle
         
         self.textView_comment.delegate = self
         self.textView_comment.text = "Add your comment here..."

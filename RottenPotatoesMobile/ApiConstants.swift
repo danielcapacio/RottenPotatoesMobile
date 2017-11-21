@@ -24,7 +24,7 @@ struct ApiConstants {
     static let topRated = "/movie/top_rated"
     static let popularPeople = "/person/popular"
     
-    enum posterSize: String {
+    enum imageSize: String {
         case xsmall = "w92"
         case small = "w154"
         case medium = "w185"

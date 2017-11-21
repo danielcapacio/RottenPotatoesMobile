@@ -26,7 +26,6 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationItem.title = "Popular"
         
         KRProgressHUD.show(withMessage: "Loading movies...")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             KRProgressHUD.dismiss()
             
@@ -71,24 +70,38 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             // poster image
             let imagePath = movie["poster_path"].stringValue
             let movieId = movie["id"].stringValue
-            let posterId = movieId + "_" + ApiConstants.posterSize.medium.rawValue
+            let posterId = movieId + "_" + ApiConstants.imageSize.medium.rawValue
             
             if let posterImage = imgCache[posterId] {
                 cell.image_popularPoster.image = posterImage
             } else {
-                let url = ApiConstants.baseUrlImage + ApiConstants.posterSize.medium.rawValue + imagePath
+                let url = ApiConstants.baseUrlImage + ApiConstants.imageSize.medium.rawValue + imagePath
                 Alamofire.request(url).responseImage { response in
                     switch response.result {
+                        case .success(let value):
+                            let image = value
+                            self.imgCache[posterId] = image
+                            DispatchQueue.main.async(execute: {
+                                cell.image_popularPoster.image = image
+                            })
+                        case .failure(let error):
+                            print(error)
+                    }
+                }
+            }
+            
+            // store backdrop in image cache to be sent to movie info controller at func tableView(... didSelectRowAt
+            let backdropPath = movie["backdrop_path"].stringValue
+            let backdropId = movieId + "_" + ApiConstants.imageSize.big.rawValue
+            let backdropUrl = ApiConstants.baseUrlImage + ApiConstants.imageSize.big.rawValue + backdropPath
+            Alamofire.request(backdropUrl).responseImage { response in
+                switch response.result {
                     case .success(let value):
                         let image = value
-                        self.imgCache[posterId] = image
-                        DispatchQueue.main.async(execute: {
-                            cell.image_popularPoster.image = image
-                        })
+                        self.imgCache[backdropId] = image
                     case .failure(let error):
                         print(error)
                     }
-                }
             }
             
             // title
@@ -127,9 +140,9 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         let movie = popularMovies[indexPath.row]
         vc.selectedMovie = movie
         
-        let posterId = movie["id"].stringValue + "_" + ApiConstants.posterSize.medium.rawValue
-        let posterImage = imgCache[posterId]
-        vc.selectedMoviePoster = posterImage
+        let backdropId = movie["id"].stringValue + "_" + ApiConstants.imageSize.big.rawValue
+        let backdropImage = imgCache[backdropId]
+        vc.selectedMovieBackdrop = backdropImage
         
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.deselectRow(at: indexPath, animated: true)
