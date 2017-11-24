@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -16,9 +17,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField_password: UITextField!
     @IBOutlet weak var image_background: UIImageView!
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
+        
         self.textField_email.delegate = self
         self.textField_password.delegate = self
         
@@ -44,12 +49,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
-                    UserInfo.email = self.textField_email.text!
-                    UserInfo.password = self.textField_password.text!
-                    
-                    //Go to the HomeViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.setUserInfo() { userInformation in
+                        UserInfo.firstName = userInformation[0]
+                        UserInfo.lastName = userInformation[1]
+                        UserInfo.username = userInformation[2]
+                        UserInfo.email = self.textField_email.text!
+                        UserInfo.password = self.textField_password.text!
+                        
+                        //Go to the HomeViewController if the login is sucessful
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                        self.present(vc!, animated: true, completion: nil)
+                    }
                 } else {
                     //Tells the user that there is an error and then gets firebase to tell them the error
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -61,6 +71,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    /**
+     * Set global user info variables (firstName, lastName, username) within completion block.
+     */
+    func setUserInfo(completion: @escaping ([String])->()) {
+        // locating user's additional info in db, based on login email
+        var userFound = false
+        self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            for users in snapshot.children.allObjects as! [DataSnapshot] {
+                for user in users.children.allObjects as! [DataSnapshot] {
+                    if (user.key == "email") {
+                        if (user.value as? String == self.textField_email.text) {
+                            userFound = true
+                        }
+                    }
+                    if (userFound && user.key == "firstName") {
+                        UserInfo.firstName = user.value as! String
+                    }
+                    if (userFound && user.key == "lastName") {
+                        UserInfo.lastName = user.value as! String
+                    }
+                }
+                if userFound {
+                    UserInfo.username = users.key
+                    userFound = false
+                }
+            }
+            let userInformation = [UserInfo.firstName,
+                                   UserInfo.lastName,
+                                   UserInfo.username]
+            completion(userInformation)
+        });
     }
     
     // hide keyboard when user touches outside keyboard
