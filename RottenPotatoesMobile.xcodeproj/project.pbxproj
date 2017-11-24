@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		060B97DB1FC7BBEF0028E193 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060B97DA1FC7BBEF0028E193 /* UserInfo.swift */; };
-		061D81301FC2E09800C342B0 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D812E1FC2E09800C342B0 /* ReviewViewController.swift */; };
-		061D81311FC2E09800C342B0 /* ReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* ReviewViewController.xib */; };
+		061D81301FC2E09800C342B0 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */; };
+		061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */; };
 		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
 		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
@@ -40,8 +40,8 @@
 
 /* Begin PBXFileReference section */
 		060B97DA1FC7BBEF0028E193 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		061D812E1FC2E09800C342B0 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
-		061D812F1FC2E09800C342B0 /* ReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewViewController.xib; sourceTree = "<group>"; };
+		061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
+		061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteReviewViewController.xib; sourceTree = "<group>"; };
 		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
@@ -95,13 +95,20 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		061D812D1FC2E08800C342B0 /* Review */ = {
+		060B97DE1FC83FC00028E193 /* Reviews */ = {
 			isa = PBXGroup;
 			children = (
-				061D812E1FC2E09800C342B0 /* ReviewViewController.swift */,
-				061D812F1FC2E09800C342B0 /* ReviewViewController.xib */,
 			);
-			path = Review;
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		061D812D1FC2E08800C342B0 /* WriteReview */ = {
+			isa = PBXGroup;
+			children = (
+				061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */,
+				061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */,
+			);
+			path = WriteReview;
 			sourceTree = "<group>";
 		};
 		06701DE21FBF04E4000A4252 /* MovieInfo */ = {
@@ -135,9 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				060B97DC1FC7BEB80028E193 /* Config */,
-				068B7F961FBD915700B40B3C /* Profile */,
 				068B7F941FBD906300B40B3C /* Authentication */,
 				068B7F8F1FBD851B00B40B3C /* Home */,
+				060B97DE1FC83FC00028E193 /* Reviews */,
+				068B7F961FBD915700B40B3C /* Profile */,
 				0670F8041FB554060067317B /* AppDelegate.swift */,
 				0670F8081FB554060067317B /* Main.storyboard */,
 				0670F80B1FB554060067317B /* Assets.xcassets */,
@@ -163,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				06701DE21FBF04E4000A4252 /* MovieInfo */,
-				061D812D1FC2E08800C342B0 /* Review */,
+				061D812D1FC2E08800C342B0 /* WriteReview */,
 				068B7F881FBD6C5000B40B3C /* TableCells */,
 				0670F81E1FB5F7830067317B /* HomeViewController.swift */,
 				068B7F9C1FBD922600B40B3C /* NowPlayingViewController.swift */,
@@ -277,7 +285,7 @@
 			files = (
 				0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */,
 				06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */,
-				061D81311FC2E09800C342B0 /* ReviewViewController.xib in Resources */,
+				061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */,
 				0670F80C1FB554060067317B /* Assets.xcassets in Resources */,
 				068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */,
 				068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */,
@@ -369,7 +377,7 @@
 			files = (
 				068B7FA61FBD925200B40B3C /* UpcomingViewController.swift in Sources */,
 				0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */,
-				061D81301FC2E09800C342B0 /* ReviewViewController.swift in Sources */,
+				061D81301FC2E09800C342B0 /* WriteReviewViewController.swift in Sources */,
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
 				060B97DB1FC7BBEF0028E193 /* UserInfo.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,

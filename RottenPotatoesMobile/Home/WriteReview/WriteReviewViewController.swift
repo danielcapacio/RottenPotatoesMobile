@@ -1,5 +1,5 @@
 //
-//  ReviewViewController.swift
+//  WriteReviewViewController.swift
 //  RottenPotatoesMobile
 //
 //  Created by Daniel Capacio on 2017-11-20.
@@ -12,7 +12,7 @@ import SwiftyJSON
 import FirebaseDatabase
 import KRProgressHUD
 
-class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var outerView: UIView!
     @IBOutlet weak var uiView: UIView!

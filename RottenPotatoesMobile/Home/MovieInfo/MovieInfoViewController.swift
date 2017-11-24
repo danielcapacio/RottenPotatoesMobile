@@ -111,7 +111,7 @@ class MovieInfoViewController: UIViewController {
     }
     
     @IBAction func goToReviewPage(_ sender: Any) {
-        let vc = ReviewViewController()
+        let vc = WriteReviewViewController()
         vc.movie = self.selectedMovie
         vc.backdrop = self.selectedMovieBackdrop
         vc.movieTitle = self.selectedMovieTitle
