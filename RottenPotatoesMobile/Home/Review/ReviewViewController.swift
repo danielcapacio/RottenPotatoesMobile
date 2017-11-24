@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import FirebaseDatabase
+import KRProgressHUD
 
 class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -59,9 +60,30 @@ class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDa
     }
     
     @IBAction func saveReview(_ sender: Any) {
-        print(self.label_title.text!)
-        print(self.textView_comment.text)
-        print(self.selectedRating)
+        if self.textView_comment.text == "" || self.textView_comment.text == "Add your comment here..." {
+            let alertController = UIAlertController(title: "Error", message: "Comments field required.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        // store user's review into firebase
+        ref.child("users").child(UserInfo.username).child("reviews").observeSingleEvent(of: .value, with: { (snapshot) in
+            let write = [
+                self.label_title.text! as NSString :
+                    [
+                        "rating" : self.selectedRating as NSString,
+                        "comment" : self.textView_comment.text! as NSString
+                    ]
+            ]
+            self.ref.child("users").child(UserInfo.username).child("reviews").updateChildValues(write)
+        })
+        
+        KRProgressHUD.showSuccess(withMessage: "Saved!")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            KRProgressHUD.dismiss()
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
