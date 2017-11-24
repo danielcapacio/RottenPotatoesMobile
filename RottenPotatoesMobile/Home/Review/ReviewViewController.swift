@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import FirebaseDatabase
 
 class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -29,6 +30,8 @@ class ReviewViewController: UIViewController, UITextViewDelegate, UIPickerViewDa
                    "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"]
     
     var selectedRating = "5" // default to 5
+    
+    var ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -109,6 +109,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             ]
                             self.ref.child("users").updateChildValues(write)
                             
+                            UserInfo.firstName = self.textField_firstName.text!
+                            UserInfo.lastName = self.textField_lastName.text!
+                            UserInfo.username = self.textField_username.text!
+                            UserInfo.email = self.textField_email.text!
+                            UserInfo.password = self.textField_password.text!
+                            
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                             self.present(vc!, animated: true, completion: nil)
                         } else {

@@ -44,6 +44,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
+                    UserInfo.email = self.textField_email.text!
+                    UserInfo.password = self.textField_password.text!
+                    
                     //Go to the HomeViewController if the login is sucessful
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                     self.present(vc!, animated: true, completion: nil)

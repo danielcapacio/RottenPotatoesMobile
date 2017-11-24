@@ -35,7 +35,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "Welcome"
+        self.navigationItem.title = "Welcome \(UserInfo.firstName)!"
         
         tableView.dataSource = self
         tableView.delegate = self
