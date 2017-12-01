@@ -36,7 +36,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
             
             let reviewsReference = self.ref.child("users").child("\(UserInfo.username)").child("reviews").queryOrderedByKey()
-            reviewsReference.observeSingleEvent(of: .value) { (snapshot) in
+            reviewsReference.observe(.value) { (snapshot) in
                 if snapshot.exists() {
                     //    // snapshot in weird, random order - don't want that
                     //    let reviews = snapshot.value as! [String: AnyObject]
@@ -70,8 +70,10 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
                             }
                         }
                     }
-                    self.allReviews.reverse()
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.allReviews.reverse()
+                        self.tableView.reloadData()
+                    }
                 }
             }
             
