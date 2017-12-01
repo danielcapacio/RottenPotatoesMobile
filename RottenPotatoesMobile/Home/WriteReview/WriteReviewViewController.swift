@@ -70,14 +70,21 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
         
         // store user's review into firebase
         ref.child("users").child(UserInfo.username).child("reviews").observeSingleEvent(of: .value, with: { (snapshot) in
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+            let strDate = dateFormatter.string(from: date)
+            
+            let reviewsRef = self.ref.child("users").child(UserInfo.username).child("reviews")
+            let reviewAutoId = reviewsRef.childByAutoId().key
             let write = [
-                self.label_title.text! as NSString :
-                    [
-                        "rating" : self.selectedRating as NSString,
-                        "comment" : self.textView_comment.text! as NSString
-                    ]
-            ]
-            self.ref.child("users").child(UserInfo.username).child("reviews").updateChildValues(write)
+                "movie": self.label_title.text! as NSString,
+                "date": strDate,
+                "rating": self.selectedRating as NSString,
+                "comment": self.textView_comment.text! as NSString,
+                "username": UserInfo.username as NSString
+                ] as [String : Any] as [String : Any]
+            reviewsRef.child(reviewAutoId).updateChildValues(write)
         })
         
         KRProgressHUD.showSuccess(withMessage: "Saved!")

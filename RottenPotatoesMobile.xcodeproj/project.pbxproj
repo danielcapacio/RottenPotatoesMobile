@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		060B97DB1FC7BBEF0028E193 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060B97DA1FC7BBEF0028E193 /* UserInfo.swift */; };
+		060B97E01FC846F60028E193 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060B97DF1FC846F60028E193 /* ReviewsViewController.swift */; };
+		060B97E41FC847210028E193 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060B97E21FC847210028E193 /* ReviewsTableViewCell.swift */; };
+		060B97E51FC847210028E193 /* ReviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060B97E31FC847210028E193 /* ReviewsTableViewCell.xib */; };
 		061D81301FC2E09800C342B0 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */; };
 		061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */; };
 		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
+		063CFCF01FD1861A00B0327E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CFCEF1FD1861A00B0327E /* Review.swift */; };
 		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
 		06701DE51FBF04F6000A4252 /* MovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DE31FBF04F6000A4252 /* MovieInfoViewController.swift */; };
@@ -40,9 +44,13 @@
 
 /* Begin PBXFileReference section */
 		060B97DA1FC7BBEF0028E193 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		060B97DF1FC846F60028E193 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		060B97E21FC847210028E193 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		060B97E31FC847210028E193 /* ReviewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsTableViewCell.xib; sourceTree = "<group>"; };
 		061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteReviewViewController.xib; sourceTree = "<group>"; };
 		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		063CFCEF1FD1861A00B0327E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
 		06701DE31FBF04F6000A4252 /* MovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			children = (
 				0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */,
 				060B97DA1FC7BBEF0028E193 /* UserInfo.swift */,
+				063CFCEF1FD1861A00B0327E /* Review.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -98,8 +107,19 @@
 		060B97DE1FC83FC00028E193 /* Reviews */ = {
 			isa = PBXGroup;
 			children = (
+				060B97E11FC846FE0028E193 /* TableCells */,
+				060B97DF1FC846F60028E193 /* ReviewsViewController.swift */,
 			);
 			path = Reviews;
+			sourceTree = "<group>";
+		};
+		060B97E11FC846FE0028E193 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				060B97E21FC847210028E193 /* ReviewsTableViewCell.swift */,
+				060B97E31FC847210028E193 /* ReviewsTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		061D812D1FC2E08800C342B0 /* WriteReview */ = {
@@ -287,6 +307,7 @@
 				06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */,
 				061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */,
 				0670F80C1FB554060067317B /* Assets.xcassets in Resources */,
+				060B97E51FC847210028E193 /* ReviewsTableViewCell.xib in Resources */,
 				068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */,
 				068B7F8E1FBD6CAE00B40B3C /* HomeTableViewCell.xib in Resources */,
 				068B7F9F1FBD922600B40B3C /* NowPlayingViewController.xib in Resources */,
@@ -386,10 +407,13 @@
 				068B7FA21FBD923600B40B3C /* TopRatedViewController.swift in Sources */,
 				06701DE51FBF04F6000A4252 /* MovieInfoViewController.swift in Sources */,
 				0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */,
+				060B97E41FC847210028E193 /* ReviewsTableViewCell.swift in Sources */,
 				069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */,
 				068B7F9E1FBD922600B40B3C /* NowPlayingViewController.swift in Sources */,
+				063CFCF01FD1861A00B0327E /* Review.swift in Sources */,
 				0670F8071FB554060067317B /* LoginViewController.swift in Sources */,
 				068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */,
+				060B97E01FC846F60028E193 /* ReviewsViewController.swift in Sources */,
 				0670F8051FB554060067317B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
