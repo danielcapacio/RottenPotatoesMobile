@@ -40,6 +40,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             let reviewsReference = self.ref.child("users").child("\(UserInfo.username)").child("reviews").queryOrderedByKey()
             reviewsReference.observe(.value) { (snapshot) in
+                self.allReviews.removeAll()
                 if snapshot.exists() {
                     //    // snapshot in weird, random order - don't want that
                     //    let reviews = snapshot.value as! [String: AnyObject]
@@ -79,7 +80,6 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                 }
             }
-            
         }
     }
     
