@@ -23,6 +23,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Your Reviews"
         
         KRProgressHUD.show(withMessage: "Loading reviews...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -33,7 +34,9 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             let nibName = UINib(nibName: "ReviewsTableViewCell", bundle: nil)
             self.tableView.register(nibName, forCellReuseIdentifier: "reviewsTableViewCell")
-            self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+            // self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // light gray
+            self.tableView.backgroundColor = UIColor(red:0.95, green:0.97, blue:0.91, alpha:1.0)
+            self.tableView.allowsSelection = false
             
             let reviewsReference = self.ref.child("users").child("\(UserInfo.username)").child("reviews").queryOrderedByKey()
             reviewsReference.observe(.value) { (snapshot) in

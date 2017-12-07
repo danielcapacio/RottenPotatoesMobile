@@ -36,14 +36,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Welcome \(UserInfo.firstName)"
-        
         tableView.dataSource = self
         tableView.delegate = self
         
         let nibName = UINib(nibName: "HomeTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "homeTableViewCell")
         
-        tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        // tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // light gray
+        self.tableView.backgroundColor = UIColor(red:0.95, green:0.97, blue:0.91, alpha:1.0)
     }
     
     override func didReceiveMemoryWarning() {

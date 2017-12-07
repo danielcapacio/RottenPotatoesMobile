@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Profile"
         self.image_profileIcon.image = #imageLiteral(resourceName: "frog")
     }
 
