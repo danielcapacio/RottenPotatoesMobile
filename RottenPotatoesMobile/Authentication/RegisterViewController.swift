@@ -19,7 +19,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField_email: UITextField!
     @IBOutlet weak var textField_password: UITextField!
     @IBOutlet weak var textField_confirmPassword: UITextField!
-    @IBOutlet weak var image_background: UIImageView!
     
     var ref = Database.database().reference()
     
@@ -32,8 +31,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.textField_email.delegate = self
         self.textField_password.delegate = self
         self.textField_confirmPassword.delegate = self
-        
-        self.image_background.image = #imageLiteral(resourceName: "background")
     }
 
     override func didReceiveMemoryWarning() {

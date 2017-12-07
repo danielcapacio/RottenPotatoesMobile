@@ -13,14 +13,11 @@ import FirebaseAuth
 class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField_email: UITextField!
-    @IBOutlet weak var image_background: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.textField_email.delegate = self
-        
-        self.image_background.image = #imageLiteral(resourceName: "background")
     }
 
     override func didReceiveMemoryWarning() {
