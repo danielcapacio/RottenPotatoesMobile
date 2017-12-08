@@ -94,14 +94,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                                         "firstName" : self.textField_firstName.text! as NSString,
                                         "lastName" : self.textField_lastName.text! as NSString,
                                         "email" : self.textField_email.text! as NSString,
-                                        "reviews" :
-                                            [
-                                                "movie" :
-                                                    [
-                                                        "rating" : nil,
-                                                        "review" : nil
-                                                    ]
-                                            ]
+                                        "reviews" : nil
                                     ]
                             ]
                             self.ref.child("users").updateChildValues(write)

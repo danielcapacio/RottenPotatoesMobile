@@ -14,6 +14,7 @@
 		061D81301FC2E09800C342B0 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */; };
 		061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */; };
 		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
+		063A4E1C1FDB3E8B002DD53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */; };
 		063CFCF01FD1861A00B0327E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CFCEF1FD1861A00B0327E /* Review.swift */; };
 		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
@@ -38,7 +39,6 @@
 		068B7FA61FBD925200B40B3C /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B7FA41FBD925200B40B3C /* UpcomingViewController.swift */; };
 		068B7FA71FBD925200B40B3C /* UpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068B7FA51FBD925200B40B3C /* UpcomingViewController.xib */; };
 		069536121FBC657900B0DA75 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069536111FBC657900B0DA75 /* ProfileViewController.swift */; };
-		06B7893E1FBF64B40086BF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */; };
 		A7460A5D93B1CF2436AC1CD3 /* Pods_RottenPotatoesMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +50,7 @@
 		061D812E1FC2E09800C342B0 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteReviewViewController.xib; sourceTree = "<group>"; };
 		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		063CFCEF1FD1861A00B0327E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		068B7FA41FBD925200B40B3C /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		068B7FA51FBD925200B40B3C /* UpcomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingViewController.xib; sourceTree = "<group>"; };
 		069536111FBC657900B0DA75 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10DFFAF4D72993DF70DA519F /* Pods_RottenPotatoesMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RottenPotatoesMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0DC6165B9E14621AD8C55 /* Pods-RottenPotatoesMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenPotatoesMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile.release.xcconfig"; sourceTree = "<group>"; };
 		FB4DEE37858895E50A65ABCC /* Pods-RottenPotatoesMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenPotatoesMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RottenPotatoesMobile/Pods-RottenPotatoesMobile.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				0670F80B1FB554060067317B /* Assets.xcassets */,
 				0670F80D1FB554060067317B /* LaunchScreen.storyboard */,
 				0670F8101FB554060067317B /* Info.plist */,
-				06B7893D1FBF64B40086BF4B /* GoogleService-Info.plist */,
+				063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */,
 			);
 			path = RottenPotatoesMobile;
 			sourceTree = "<group>";
@@ -303,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063A4E1C1FDB3E8B002DD53C /* GoogleService-Info.plist in Resources */,
 				0670F80F1FB554060067317B /* LaunchScreen.storyboard in Resources */,
 				06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */,
 				061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */,
@@ -313,7 +314,6 @@
 				068B7F9F1FBD922600B40B3C /* NowPlayingViewController.xib in Resources */,
 				068B7FA31FBD923600B40B3C /* TopRatedViewController.xib in Resources */,
 				068B7F9A1FBD920E00B40B3C /* PopularViewController.xib in Resources */,
-				06B7893E1FBF64B40086BF4B /* GoogleService-Info.plist in Resources */,
 				0670F80A1FB554060067317B /* Main.storyboard in Resources */,
 				06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */,
 			);
