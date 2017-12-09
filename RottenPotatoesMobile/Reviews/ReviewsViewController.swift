@@ -78,6 +78,17 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         self.allReviews.reverse()
                         self.tableView.reloadData()
                     }
+                } else { // snapshot does not exist - no reviews
+                    let reviewObj = Review()
+                    reviewObj.date = ""
+                    reviewObj.username = ""
+                    reviewObj.movie = "No reviews to display yet."
+                    reviewObj.comment = ""
+                    reviewObj.rating = ""
+                    self.allReviews.append(reviewObj)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
@@ -98,16 +109,20 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewsTableViewCell", for: indexPath) as! ReviewsTableViewCell
         let review = self.allReviews[indexPath.row]
-        cell.label_date.text        = review.date
-        cell.label_username.text    = review.username
-        cell.label_movieTitle.text  = review.movie
-        cell.label_comment.text     = review.comment
-        cell.label_rating.text      = review.rating
+        if self.allReviews.count == 0 {
+            cell.label_movieTitle.text = review.movie
+        } else {
+            cell.label_date.text        = review.date
+            cell.label_username.text    = review.username
+            cell.label_movieTitle.text  = review.movie
+            cell.label_comment.text     = review.comment
+            cell.label_rating.text      = review.rating
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 115
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

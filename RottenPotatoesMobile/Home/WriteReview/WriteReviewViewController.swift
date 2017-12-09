@@ -91,7 +91,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
             reviewsRef.child(reviewAutoId).updateChildValues(write)
         })
         
-        KRProgressHUD.showSuccess(withMessage: "Saved!")
+        KRProgressHUD.showSuccess(withMessage: "Saved")
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             KRProgressHUD.dismiss()
         }
