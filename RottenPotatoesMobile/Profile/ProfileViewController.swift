@@ -13,13 +13,21 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var image_profileIcon: UIImageView!
+    @IBOutlet weak var label_username: UILabel!
+    @IBOutlet weak var label_firstname: UILabel!
+    @IBOutlet weak var label_lastname: UILabel!
+    @IBOutlet weak var label_email: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Profile"
-        self.image_profileIcon.image = #imageLiteral(resourceName: "frog")
+        self.image_profileIcon.image = #imageLiteral(resourceName: "parrot")
+        self.label_username.text = UserInfo.username
+        self.label_firstname.text = UserInfo.firstName
+        self.label_lastname.text = UserInfo.lastName
+        self.label_email.text = UserInfo.email
     }
     
     override func viewDidAppear(_ animated: Bool) {
