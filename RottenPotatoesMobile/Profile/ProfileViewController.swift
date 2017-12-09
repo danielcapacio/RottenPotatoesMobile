@@ -21,6 +21,10 @@ class ProfileViewController: UIViewController {
         self.navigationItem.title = "Profile"
         self.image_profileIcon.image = #imageLiteral(resourceName: "frog")
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

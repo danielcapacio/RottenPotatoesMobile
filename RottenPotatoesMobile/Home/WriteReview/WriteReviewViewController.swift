@@ -53,6 +53,10 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
         self.pickerView_rating.delegate = self
         self.pickerView_rating.selectRow(8, inComponent: 0, animated: true) // set default rating to 5
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

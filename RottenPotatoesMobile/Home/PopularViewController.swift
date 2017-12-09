@@ -41,6 +41,10 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.backgroundColor = UIColor(red:0.95, green:0.97, blue:0.91, alpha:1.0)
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

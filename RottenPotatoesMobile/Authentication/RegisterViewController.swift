@@ -32,6 +32,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.textField_password.delegate = self
         self.textField_confirmPassword.delegate = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

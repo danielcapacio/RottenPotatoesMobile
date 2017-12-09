@@ -83,6 +83,10 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }

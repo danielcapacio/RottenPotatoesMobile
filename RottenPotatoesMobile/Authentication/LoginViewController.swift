@@ -29,6 +29,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.textField_password.delegate = self
         self.image_logo.image = #imageLiteral(resourceName: "logo-no-bg")
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

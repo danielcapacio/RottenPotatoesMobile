@@ -15,6 +15,8 @@
 		061D81311FC2E09800C342B0 /* WriteReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */; };
 		0631B2D91FBC371A00BCAD3F /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */; };
 		063A4E1C1FDB3E8B002DD53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */; };
+		063A4E1E1FDB4325002DD53C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1D1FDB4325002DD53C /* Reachability.swift */; };
+		063A4E201FDB4579002DD53C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1F1FDB4579002DD53C /* Alert.swift */; };
 		063CFCF01FD1861A00B0327E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CFCEF1FD1861A00B0327E /* Review.swift */; };
 		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
@@ -51,6 +53,8 @@
 		061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteReviewViewController.xib; sourceTree = "<group>"; };
 		0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		063A4E1D1FDB4325002DD53C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		063A4E1F1FDB4579002DD53C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		063CFCEF1FD1861A00B0327E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				0631B2D81FBC371A00BCAD3F /* ApiConstants.swift */,
 				060B97DA1FC7BBEF0028E193 /* UserInfo.swift */,
 				063CFCEF1FD1861A00B0327E /* Review.swift */,
+				063A4E1D1FDB4325002DD53C /* Reachability.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -129,6 +134,14 @@
 				061D812F1FC2E09800C342B0 /* WriteReviewViewController.xib */,
 			);
 			path = WriteReview;
+			sourceTree = "<group>";
+		};
+		063A4E5D1FDB7081002DD53C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				063A4E1F1FDB4579002DD53C /* Alert.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		06701DE21FBF04E4000A4252 /* MovieInfo */ = {
@@ -161,6 +174,7 @@
 		0670F8031FB554060067317B /* RottenPotatoesMobile */ = {
 			isa = PBXGroup;
 			children = (
+				063A4E5D1FDB7081002DD53C /* Util */,
 				060B97DC1FC7BEB80028E193 /* Config */,
 				068B7F941FBD906300B40B3C /* Authentication */,
 				068B7F8F1FBD851B00B40B3C /* Home */,
@@ -402,6 +416,7 @@
 				0670F81F1FB5F7830067317B /* HomeViewController.swift in Sources */,
 				060B97DB1FC7BBEF0028E193 /* UserInfo.swift in Sources */,
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
+				063A4E201FDB4579002DD53C /* Alert.swift in Sources */,
 				068B7F991FBD920E00B40B3C /* PopularViewController.swift in Sources */,
 				06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */,
 				068B7FA21FBD923600B40B3C /* TopRatedViewController.swift in Sources */,
@@ -414,6 +429,7 @@
 				0670F8071FB554060067317B /* LoginViewController.swift in Sources */,
 				068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */,
 				060B97E01FC846F60028E193 /* ReviewsViewController.swift in Sources */,
+				063A4E1E1FDB4325002DD53C /* Reachability.swift in Sources */,
 				0670F8051FB554060067317B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

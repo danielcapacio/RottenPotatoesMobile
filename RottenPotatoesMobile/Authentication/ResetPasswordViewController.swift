@@ -19,6 +19,10 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.textField_email.delegate = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handleNetworkConnection(viewController: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
