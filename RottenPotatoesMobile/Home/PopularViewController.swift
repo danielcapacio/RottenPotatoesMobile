@@ -32,8 +32,8 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.dataSource = self
             self.tableView.delegate = self
             
-            let nibName = UINib(nibName: "PopularTableViewCell", bundle: nil)
-            self.tableView.register(nibName, forCellReuseIdentifier: "popularTableViewCell")
+            let nibName = UINib(nibName: "CategoryTableViewCell", bundle: nil)
+            self.tableView.register(nibName, forCellReuseIdentifier: "categoryTableViewCell")
             
             let url = "\(ApiConstants.baseUrl)\(ApiConstants.discover)?api_key=\(ApiConstants.API_KEY)&sort_by=popularity.desc"
             self.loadPopularMovies(url: url)
@@ -67,7 +67,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "popularTableViewCell", for: indexPath) as! PopularTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         if popularMovies.count > 0 {
             // getting individual movie
             let movie = popularMovies[indexPath.row]
@@ -78,7 +78,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             let posterId = movieId + "_" + ApiConstants.imageSize.medium.rawValue
             
             if let posterImage = imgCache[posterId] {
-                cell.image_popularPoster.image = posterImage
+                cell.image_poster.image = posterImage
             } else {
                 let url = ApiConstants.baseUrlImage + ApiConstants.imageSize.medium.rawValue + imagePath
                 Alamofire.request(url).responseImage { response in
@@ -87,7 +87,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                             let image = value
                             self.imgCache[posterId] = image
                             DispatchQueue.main.async(execute: {
-                                cell.image_popularPoster.image = image
+                                cell.image_poster.image = image
                             })
                         case .failure(let error):
                             print(error)
@@ -111,25 +111,25 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             // title
             if let movieTitle = movie["title"].string {
-                cell.label_popularTitle.text = movieTitle
+                cell.label_title.text = movieTitle
             } else {
-                cell.label_popularTitle.text = "Error loading title"
+                cell.label_title.text = "Error loading title"
             }
             
             // year
             let releaseDate = movie["release_date"].string
             if let date = releaseDate {
                 let year = String(Array(date)[0...3])
-                cell.label_popularYear.text = "(" + year + ")"
+                cell.label_year.text = "(" + year + ")"
             } else {
-                cell.label_popularYear.text = "Error loading year"
+                cell.label_year.text = "Error loading year"
             }
             
             // popularity rating
             if let popularity = movie["popularity"].double {
-                cell.label_popularPopularity.text = "Pop. rating: " + String(format:"%f", popularity)
+                cell.label_popularity.text = "Pop. rating: " + String(format:"%f", popularity)
             } else {
-                cell.label_popularPopularity.text = "Error loading popularity"
+                cell.label_popularity.text = "Error loading popularity"
             }
         }
         return cell

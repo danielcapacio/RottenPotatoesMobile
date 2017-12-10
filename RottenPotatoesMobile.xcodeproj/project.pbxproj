@@ -18,8 +18,8 @@
 		063A4E1E1FDB4325002DD53C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1D1FDB4325002DD53C /* Reachability.swift */; };
 		063A4E201FDB4579002DD53C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1F1FDB4579002DD53C /* Alert.swift */; };
 		063CFCF01FD1861A00B0327E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CFCEF1FD1861A00B0327E /* Review.swift */; };
-		06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */; };
-		06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */; };
+		06701DDE1FBE77A3000A4252 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* CategoryTableViewCell.swift */; };
+		06701DDF1FBE77A3000A4252 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* CategoryTableViewCell.xib */; };
 		06701DE51FBF04F6000A4252 /* MovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DE31FBF04F6000A4252 /* MovieInfoViewController.swift */; };
 		06701DE61FBF04F6000A4252 /* MovieInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DE41FBF04F6000A4252 /* MovieInfoViewController.xib */; };
 		0670F8051FB554060067317B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670F8041FB554060067317B /* AppDelegate.swift */; };
@@ -56,8 +56,8 @@
 		063A4E1D1FDB4325002DD53C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		063A4E1F1FDB4579002DD53C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		063CFCEF1FD1861A00B0327E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
-		06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
+		06701DDC1FBE77A3000A4252 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		06701DDD1FBE77A3000A4252 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		06701DE31FBF04F6000A4252 /* MovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewController.swift; sourceTree = "<group>"; };
 		06701DE41FBF04F6000A4252 /* MovieInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoViewController.xib; sourceTree = "<group>"; };
 		0670F8011FB554060067317B /* RottenPotatoesMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenPotatoesMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,8 +195,8 @@
 			children = (
 				068B7F8B1FBD6CAE00B40B3C /* HomeTableViewCell.swift */,
 				068B7F8C1FBD6CAE00B40B3C /* HomeTableViewCell.xib */,
-				06701DDC1FBE77A3000A4252 /* PopularTableViewCell.swift */,
-				06701DDD1FBE77A3000A4252 /* PopularTableViewCell.xib */,
+				06701DDC1FBE77A3000A4252 /* CategoryTableViewCell.swift */,
+				06701DDD1FBE77A3000A4252 /* CategoryTableViewCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 				068B7FA31FBD923600B40B3C /* TopRatedViewController.xib in Resources */,
 				068B7F9A1FBD920E00B40B3C /* PopularViewController.xib in Resources */,
 				0670F80A1FB554060067317B /* Main.storyboard in Resources */,
-				06701DDF1FBE77A3000A4252 /* PopularTableViewCell.xib in Resources */,
+				06701DDF1FBE77A3000A4252 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +418,7 @@
 				0670F81B1FB5587E0067317B /* ResetPasswordViewController.swift in Sources */,
 				063A4E201FDB4579002DD53C /* Alert.swift in Sources */,
 				068B7F991FBD920E00B40B3C /* PopularViewController.swift in Sources */,
-				06701DDE1FBE77A3000A4252 /* PopularTableViewCell.swift in Sources */,
+				06701DDE1FBE77A3000A4252 /* CategoryTableViewCell.swift in Sources */,
 				068B7FA21FBD923600B40B3C /* TopRatedViewController.swift in Sources */,
 				06701DE51FBF04F6000A4252 /* MovieInfoViewController.swift in Sources */,
 				0670F8191FB5586A0067317B /* RegisterViewController.swift in Sources */,

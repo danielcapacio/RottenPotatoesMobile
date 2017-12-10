@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="popularTableViewCell" id="KGk-i7-Jjw" customClass="PopularTableViewCell" customModule="RottenPotatoesMobile" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCell" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="RottenPotatoesMobile" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -91,10 +91,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="image_popularPoster" destination="7w3-Li-ftq" id="fBU-LQ-Alo"/>
-                <outlet property="label_popularPopularity" destination="VYn-OA-TIB" id="Gje-q5-2mB"/>
-                <outlet property="label_popularTitle" destination="S9Q-2J-xsn" id="6t8-kv-zDU"/>
-                <outlet property="label_popularYear" destination="Uxa-e3-gg1" id="3zz-9d-LeA"/>
+                <outlet property="image_poster" destination="7w3-Li-ftq" id="fTI-H6-XnA"/>
+                <outlet property="label_popularity" destination="VYn-OA-TIB" id="pNd-tG-1Hj"/>
+                <outlet property="label_title" destination="S9Q-2J-xsn" id="cnx-ps-WDk"/>
+                <outlet property="label_year" destination="Uxa-e3-gg1" id="AgE-WM-imq"/>
             </connections>
             <point key="canvasLocation" x="131" y="58.5"/>
         </tableViewCell>
