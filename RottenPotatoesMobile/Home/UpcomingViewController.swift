@@ -27,8 +27,6 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         
         KRProgressHUD.show(withMessage: "Loading movies...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            KRProgressHUD.dismiss()
-            
             self.tableView.dataSource = self
             self.tableView.delegate = self
             
@@ -38,6 +36,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
             self.loadUpcomingMovies(url: url)
             // self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // light gray
             self.tableView.backgroundColor = UIColor(red:0.95, green:0.97, blue:0.91, alpha:1.0)
+            KRProgressHUD.dismiss()
         }
     }
     

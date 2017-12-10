@@ -27,8 +27,6 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         KRProgressHUD.show(withMessage: "Loading reviews...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            KRProgressHUD.dismiss()
-            
             self.tableView.dataSource = self
             self.tableView.delegate = self
             
@@ -91,6 +89,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                 }
             }
+            KRProgressHUD.dismiss()
         }
     }
     

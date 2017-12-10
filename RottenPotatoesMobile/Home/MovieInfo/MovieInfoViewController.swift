@@ -39,7 +39,6 @@ class MovieInfoViewController: UIViewController {
         self.uiView.isHidden = true
         KRProgressHUD.show()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            KRProgressHUD.dismiss()
             self.uiView.isHidden = false
             self.uiView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
             self.image_backdrop.image = self.selectedMovieBackdrop
@@ -48,6 +47,7 @@ class MovieInfoViewController: UIViewController {
                 let url = "\(ApiHelper.baseUrl)/movie/\(movieId)?api_key=\(ApiHelper.API_KEY)&language=en-US"
                 self.setPrimaryMovieInfo(url: url)
             }
+            KRProgressHUD.dismiss()
         }
     }
     
