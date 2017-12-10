@@ -127,9 +127,12 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
         self.selectedRating = ratings[row]
     }
     
-    // hide keyboard when user touches outside keyboard
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    func textView(_ textView: UITextView, shouldChangeTextIn shouldChangeTextInRange: NSRange, replacementText: String) -> Bool {
+        if (replacementText.isEqual("\n")) {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
 
