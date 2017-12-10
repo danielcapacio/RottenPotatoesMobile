@@ -15,7 +15,6 @@ import KRProgressHUD
 class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
     var popularMovies: [JSON] = []
     var imgCache: [String : UIImage] = [:]
     
@@ -24,6 +23,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Popular"
+        let url = "\(ApiHelper.baseUrl)\(ApiHelper.discover)?api_key=\(ApiHelper.API_KEY)&sort_by=popularity.desc"
         
         KRProgressHUD.show(withMessage: "Loading movies...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -35,7 +35,6 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             let nibName = UINib(nibName: "CategoryTableViewCell", bundle: nil)
             self.tableView.register(nibName, forCellReuseIdentifier: "categoryTableViewCell")
             
-            let url = "\(ApiConstants.baseUrl)\(ApiConstants.discover)?api_key=\(ApiConstants.API_KEY)&sort_by=popularity.desc"
             self.loadPopularMovies(url: url)
             // self.tableView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // light gray
             self.tableView.backgroundColor = UIColor(red:0.95, green:0.97, blue:0.91, alpha:1.0)
@@ -58,8 +57,8 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows: Int
         // set max number of table to be 40, else number of movie results
-        if (ApiConstants.MAX_TABLE_ROWS <= popularMovies.count) {
-            numberOfRows = ApiConstants.MAX_TABLE_ROWS
+        if (ApiHelper.MAX_TABLE_ROWS <= popularMovies.count) {
+            numberOfRows = ApiHelper.MAX_TABLE_ROWS
         } else {
             numberOfRows = popularMovies.count
         }
@@ -75,12 +74,12 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             // poster image
             let imagePath = movie["poster_path"].stringValue
             let movieId = movie["id"].stringValue
-            let posterId = movieId + "_" + ApiConstants.imageSize.medium.rawValue
+            let posterId = movieId + "_" + ApiHelper.imageSize.medium.rawValue
             
             if let posterImage = imgCache[posterId] {
                 cell.image_poster.image = posterImage
             } else {
-                let url = ApiConstants.baseUrlImage + ApiConstants.imageSize.medium.rawValue + imagePath
+                let url = ApiHelper.baseUrlImage + ApiHelper.imageSize.medium.rawValue + imagePath
                 Alamofire.request(url).responseImage { response in
                     switch response.result {
                         case .success(let value):
@@ -97,8 +96,8 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             // store backdrop in image cache to be sent to movie info controller at func tableView(... didSelectRowAt
             let backdropPath = movie["backdrop_path"].stringValue
-            let backdropId = movieId + "_" + ApiConstants.imageSize.big.rawValue
-            let backdropUrl = ApiConstants.baseUrlImage + ApiConstants.imageSize.big.rawValue + backdropPath
+            let backdropId = movieId + "_" + ApiHelper.imageSize.big.rawValue
+            let backdropUrl = ApiHelper.baseUrlImage + ApiHelper.imageSize.big.rawValue + backdropPath
             Alamofire.request(backdropUrl).responseImage { response in
                 switch response.result {
                     case .success(let value):
@@ -145,7 +144,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         let movie = popularMovies[indexPath.row]
         vc.selectedMovie = movie
         
-        let backdropId = movie["id"].stringValue + "_" + ApiConstants.imageSize.big.rawValue
+        let backdropId = movie["id"].stringValue + "_" + ApiHelper.imageSize.big.rawValue
         let backdropImage = imgCache[backdropId]
         vc.selectedMovieBackdrop = backdropImage
         

@@ -17,6 +17,7 @@
 		063A4E1C1FDB3E8B002DD53C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */; };
 		063A4E1E1FDB4325002DD53C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1D1FDB4325002DD53C /* Reachability.swift */; };
 		063A4E201FDB4579002DD53C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E1F1FDB4579002DD53C /* Alert.swift */; };
+		063A4E5F1FDCBAA1002DD53C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A4E5E1FDCBAA1002DD53C /* Date.swift */; };
 		063CFCF01FD1861A00B0327E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CFCEF1FD1861A00B0327E /* Review.swift */; };
 		06701DDE1FBE77A3000A4252 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06701DDC1FBE77A3000A4252 /* CategoryTableViewCell.swift */; };
 		06701DDF1FBE77A3000A4252 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06701DDD1FBE77A3000A4252 /* CategoryTableViewCell.xib */; };
@@ -55,6 +56,7 @@
 		063A4E1B1FDB3E8A002DD53C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		063A4E1D1FDB4325002DD53C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		063A4E1F1FDB4579002DD53C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		063A4E5E1FDCBAA1002DD53C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		063CFCEF1FD1861A00B0327E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		06701DDC1FBE77A3000A4252 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		06701DDD1FBE77A3000A4252 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				063A4E1F1FDB4579002DD53C /* Alert.swift */,
+				063A4E5E1FDCBAA1002DD53C /* Date.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				0670F8071FB554060067317B /* LoginViewController.swift in Sources */,
 				068B7F8D1FBD6CAE00B40B3C /* HomeTableViewCell.swift in Sources */,
 				060B97E01FC846F60028E193 /* ReviewsViewController.swift in Sources */,
+				063A4E5F1FDCBAA1002DD53C /* Date.swift in Sources */,
 				063A4E1E1FDB4325002DD53C /* Reachability.swift in Sources */,
 				0670F8051FB554060067317B /* AppDelegate.swift in Sources */,
 			);

@@ -45,7 +45,7 @@ class MovieInfoViewController: UIViewController {
             self.image_backdrop.image = self.selectedMovieBackdrop
             if let movie = self.selectedMovie {
                 let movieId = movie["id"].stringValue
-                let url = "\(ApiConstants.baseUrl)/movie/\(movieId)?api_key=\(ApiConstants.API_KEY)&language=en-US"
+                let url = "\(ApiHelper.baseUrl)/movie/\(movieId)?api_key=\(ApiHelper.API_KEY)&language=en-US"
                 self.setPrimaryMovieInfo(url: url)
             }
         }
