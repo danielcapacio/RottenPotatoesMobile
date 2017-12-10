@@ -14,23 +14,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let titleData = ["Popular",
                     "Now Playing",
-                    "Top Rated",
-                    "Upcoming"]
+                    "Top Rated"]
+                    // "Upcoming"]
     
     let subTitleData = ["List of the current popular movies.",
                         "List of movies in theatres.",
-                        "Top rated movies on TMDb.",
-                        "List of upcoming movies in theatres."]
+                        "Top rated movies on TMDb."]
+                        // "List of upcoming movies in theatres."]
     
     let imageData = ["video-camera",
                      "tickets",
-                     "frame",
-                     "director-chair"]
+                     "frame"]
+                     // "director-chair"]
     
     let categoryData = [PopularViewController(),
                         NowPlayingViewController(),
-                        TopRatedViewController(),
-                        UpcomingViewController()]
+                        TopRatedViewController()]
+                        // UpcomingViewController()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
