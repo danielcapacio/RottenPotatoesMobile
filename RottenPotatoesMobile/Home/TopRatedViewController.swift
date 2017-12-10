@@ -153,7 +153,7 @@ class TopRatedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-     * Load into table, popular movie results with a maximum of 40 movies - 20 per api request page.
+     * Load into table, movie results with a maximum of 40 movies - 20 per api request page.
      */
     func loadTopRatedMovies(url: String) {
         var moviesListPage1: [JSON] = []

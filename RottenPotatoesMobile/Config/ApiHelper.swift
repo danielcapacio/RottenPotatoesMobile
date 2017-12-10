@@ -22,6 +22,7 @@ struct ApiHelper {
     static let popularMovies = "/movie/popular"
     static let nowPlaying = "/movie/now_playing"
     static let topRated = "/movie/top_rated"
+    static let upcoming = "/movie/upcoming"
     static let popularPeople = "/person/popular"
     
     enum imageSize: String {

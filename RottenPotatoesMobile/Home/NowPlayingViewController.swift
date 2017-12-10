@@ -153,7 +153,7 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     /**
-     * Load into table, popular movie results with a maximum of 40 movies - 20 per api request page.
+     * Load into table, movie results with a maximum of 40 movies - 20 per api request page.
      */
     func loadNowPlayingMovies(url: String) {
         var moviesListPage1: [JSON] = []
