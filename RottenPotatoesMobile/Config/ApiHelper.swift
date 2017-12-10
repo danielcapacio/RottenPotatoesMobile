@@ -1,5 +1,5 @@
 //
-//  ApiConstants.swift
+//  ApiHelper.swift
 //  RottenPotatoesMobile
 //
 //  Created by Daniel Capacio on 2017-11-15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ApiConstants {
+struct ApiHelper {
     
     static let API_KEY = "" // not committing my api key
     static let MAX_TOTAL_PAGES = 2
