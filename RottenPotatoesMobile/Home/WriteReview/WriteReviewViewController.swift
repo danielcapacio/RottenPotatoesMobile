@@ -65,10 +65,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     
     @IBAction func saveReview(_ sender: Any) {
         if self.textView_comment.text == "" || self.textView_comment.text == "Add your comment here..." {
-            let alertController = UIAlertController(title: "Error", message: "Comments field required.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Oops!", alertMessage: "Please enter a comment.", vc: self)
             return
         }
         

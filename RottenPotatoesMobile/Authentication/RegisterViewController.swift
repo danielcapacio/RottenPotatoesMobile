@@ -44,50 +44,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func register(_ sender: Any) {
         if textField_firstName.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your first name.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Required Field", alertMessage: "Please enter a first name.", vc: self)
         } else if textField_lastName.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your last name.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Required Field", alertMessage: "Please enter a last name.", vc: self)
         } else if textField_username.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your username.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Required Field", alertMessage: "Please enter a username.", vc: self)
         } else if textField_email.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Required Field", alertMessage: "Please enter an email.", vc: self)
         } else if textField_password.text != textField_confirmPassword.text {
-            let alertController = UIAlertController(title: "Error", message: "Passwords do not match.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            genericAlert(alertTitle: "Oops!", alertMessage: "Passwords do not match.", vc: self)
         } else {
             // check if username already exists in the db
             ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.hasChild(((self.textField_username.text! as NSString) as String)) {
-                    let alertController = UIAlertController(title: "Error", message: "The username is already in use by another account.", preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                    genericAlert(alertTitle: "Oops!", alertMessage: "Username is already being used by another account.", vc: self)
                 } else {
                     Auth.auth().createUser(withEmail: self.textField_email.text!, password: self.textField_password.text!) { (user, error) in
                         if error == nil {
@@ -112,12 +82,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                             self.present(vc!, animated: true, completion: nil)
                         } else {
-                            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                            
-                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                            alertController.addAction(defaultAction)
-                            
-                            self.present(alertController, animated: true, completion: nil)
+                            genericAlert(alertTitle: "Oops!", alertMessage: (error?.localizedDescription)!, vc: self)
                         }
                     }
                 }
